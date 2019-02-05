@@ -1,0 +1,270 @@
+@import "variables.scss";
+
+.funbox__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.funbox__title {
+  margin-bottom: 0;
+  font-size: 36px;
+  text-align: center;
+}
+
+.funbox__items-group {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.funbox__item-main {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.funbox__item {
+  position: relative;
+  margin: 30px 40px 0;
+  box-sizing: border-box;
+  width: 320px;
+  height: 480px;
+  border-radius: 0 12px 12px 12px;
+  background-color: $color-blue;
+  clip-path: polygon(15% 0, 100% 0, 100% 100%, 0 100%, 0 10%);
+  cursor: pointer;
+}
+
+.funbox__item:hover {
+  background-color: $color-blue-hover;
+  .funbox__weight {
+    background-color: $color-blue-hover;
+  }
+}
+
+.funbox__item_active {
+  background-color: $color-pink;
+}
+
+.funbox__item_active:hover {
+  background-color: $color-pink-hover;
+  .funbox__weight {
+    background-color: $color-pink-hover;
+  }
+}
+
+.funbox__item_disabled {
+  pointer-events: none;
+  cursor: default;
+  background-color: $color-grey-disabled;
+}
+
+.funbox__item-inner {
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  width: 312px;
+  height: 472px;
+  background-color: $color-grey-item;
+  border-radius: 0 12px 12px 12px;
+  clip-path: polygon(15% 0, 100% 0, 100% 100%, 0 100%, 0 10%);
+  background-image: url(../images/cat.png);
+  background-position: -27px 212px;
+  background-size: 118%;
+  background-repeat: no-repeat;
+}
+
+.funbox__item-inner_disabled {
+  opacity: .5;
+}
+
+.funbox__heading1 {
+  position: relative;
+  top: 20px;
+  left: 45px;
+  font-size: 16px;
+  font-family: $font-trebuchet;
+  color: $color-grey;
+}
+
+.funbox__heading1_active {
+  color: $color-pink;
+}
+
+.funbox__heading1_disabled {
+  opacity: .5;
+}
+
+.funbox__heading2 {
+  position: relative;
+  top: 25px;
+  left: 45px;
+  font-size: 48px;
+  font-family: $font-trebuchet;
+  font-weight: 600;
+  color: $color-black;
+}
+
+.funbox__heading2_disabled {
+  opacity: .2;
+}
+
+.funbox__heading3 {
+  position: relative;
+  top: 20px;
+  left: 45px;
+  font-size: 24px;
+  font-family: $font-trebuchet;
+  font-weight: 600;
+  color: $color-black;
+}
+
+.funbox__heading3_disabled {
+  opacity: .2;
+}
+
+.funbox__description {
+  position: relative;
+  top: 34px;
+  left: 45px;
+  max-width: 120px;
+  font-size: 14px;
+  font-family: $font-trebuchet;
+  color: $color-grey;
+}
+
+.funbox__description_disabled {
+  opacity: .5;
+}
+
+.funbox__weight {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  display: grid;
+  justify-content: center;
+  width: 85px;
+  height: 85px;
+  border-radius: 100px;
+  background-color: $color-blue;
+}
+
+.funbox__weight_active {
+  background-color: $color-pink;
+}
+
+.funbox__weight-disabled {
+  background-color: $color-grey-disabled;
+}
+
+.funbox__weight-quantity {
+  position: relative;
+  top: 5px;
+  left: 0;
+  font-size: 42px;
+  font-family: $font-trebuchet;
+  color: $color-white;
+}
+
+.funbox__weight-measure {
+  position: relative;
+  left: 0;
+  bottom: 7px;
+  font-size: 21px;
+  font-family: $font-trebuchet;
+  color: #ffffff;
+  text-align: center;
+  font-weight: 100;
+}
+
+.funbox__text {
+  position: absolute;
+  bottom: -55px;
+  margin: 18px 0 20px;
+  font-size: 13px;
+  font-family: $font-trebuchet;
+  color: $color-white;
+}
+
+.funbox__text_hide {
+  display: none;
+}
+
+.funbox__text-disabled {
+  color: $color-yellow;
+}
+
+.funbox__link, .funbox__link-switch {
+  position: relative;
+  text-decoration: none;
+  color: $color-link;
+  border-bottom: 1px $color-link dashed;
+}
+
+.funbox__link:after {
+  position: absolute;
+  top: 1px;
+  content: "\B7";
+  font-size: 16px;
+}
+
+.funbox__link-switch {
+  margin-top: 5px;
+  &:after {
+    position: absolute;
+    right: -5px;
+    top: 1px;
+    content: "?";
+    font-size: 13px;
+  }
+}
+
+.funbox__text-dot {
+  color: $color-link;
+}
+
+
+@media screen and (max-device-width: 1024px) {
+  .funbox__item-main {
+    margin-bottom: 40px;
+  }
+
+  .funbox__title {
+    margin-top: 30px;
+    margin-bottom: 15px;
+  }
+
+  .funbox__items-group {
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .funbox__item {
+    margin: 20px;
+  }
+
+  .funbox__text {
+    margin: 0 0 20px;
+    bottom: -33px;
+  }
+}
+
+@media screen and (max-device-width: 767px) {
+  .funbox__container {
+    height: inherit;
+  }
+
+  .funbox__items-group {
+    flex-wrap: nowrap;
+    flex-direction: column;
+  }
+
+  .funbox__text {
+    bottom: -30px;
+  }
+}

@@ -1,0 +1,28 @@
+@font-face {
+  font-family: 'Exo2Thin';
+  font-style: normal;
+  font-weight: 400;
+  src: url(../fonts/Exo2.0-Thin.otf);
+}
+
+@font-face {
+  font-family: 'Trebuchet-MS';
+  font-style: normal;
+  font-weight: 400;
+  src: url(../fonts/Trebuchet-MS.ttf);
+}
+
+$font-thin: 'Exo2Thin';
+$font-trebuchet: 'Trebuchet-MS';
+
+$color-white: #ffffff;
+$color-black: #000000;
+$color-grey: #666666;
+$color-grey-item: #f2f2f2;
+$color-grey-disabled: #b3b3b3;
+$color-yellow: #ffff66;
+$color-blue: #1698d9;
+$color-blue-hover: #2ea8e5;
+$color-pink: #d91667;
+$color-pink-hover: #e52e7a;
+$color-link: #1896d8;
