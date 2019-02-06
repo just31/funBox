@@ -34,9 +34,13 @@ body {
   font: 100% "Exo2Thin";
   color: #ffffff;
   line-height: 1.3;
-  background: url(../images/cover-main.png) repeat;
+  background-image: url(../images/cover-main.png), linear-gradient(to top, grey, #fff 50%, grey);
   background-blend-mode: overlay;
-  background-color: rgba(0, 0, 0, 0.2); }
+  background-color: rgba(0, 0, 0, 0.5);
+  background-repeat: repeat; }
+
+body:before {
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0)); }
 
 @-moz-document url-prefix() {
   body {
@@ -103,7 +107,7 @@ table {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh; }
+  height: 95vh; }
 
 .funbox__title {
   margin-bottom: 0;
