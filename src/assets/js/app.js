@@ -14,6 +14,14 @@ $(function() {
         }
     });
 
+    // Функция меняющая текст и его цвет, в заголовке упаковки.
+    function change_text(target) {
+        if($(target).hasClass("funbox__item_active") && !~$(target).text().indexOf('Котэ не одобряет?')) {
+            $(target).find(".funbox__heading1").addClass("funbox__heading1_active");
+            $(target).find(".funbox__heading1").text("Котэ не одобряет?");
+        }
+    }
+
     // Делаем упаковки активными, при клике на нее(них).
     $(".funbox__item").on({
         mousedown: function () {
@@ -53,21 +61,14 @@ $(function() {
 
     });
 
+
     // При отведении мышки от выбранной упаковки, меняем текст в заголовке. И цвет данного текста.
     $( ".funbox__item" ).on({
         mouseleave: function(){
-
             let _self = this;
-
-            function change_text() {
-                if($(_self).hasClass("funbox__item_active")) {
-                    $(_self).find(".funbox__heading1").addClass("funbox__heading1_active");
-                    //$(_self).find(".funbox__heading1").toggleText("Сказочное заморское яство", "Котэ не одобряет?");
-                    $(_self).find(".funbox__heading1").text("Котэ не одобряет?");
-                }
-            }
-
-            setTimeout(change_text, 100);
+            setTimeout(function(){
+                change_text(_self);
+            }, 100);
         }
     });
 
@@ -87,7 +88,7 @@ $(function() {
 
         $(parent).find(".funbox__text-disabled").detach();
         $(parent).find(".funbox__text-first").removeClass("funbox__text_hide");
-        
+
         $(parent).find(".funbox__heading1").removeClass("funbox__heading1_active").text("Сказочное заморское яство");
         $(this).find(".funbox__heading1").removeClass("funbox__heading1_active");
 
