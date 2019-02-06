@@ -36,10 +36,6 @@ body {
   background-repeat: repeat;
 }
 
-body:before {
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
-}
-
 @-moz-document url-prefix() {
   body {
     background-color: rgba(0, 0, 0, .6);
