@@ -67,11 +67,18 @@
   position: absolute;
   top: 4px;
   left: 4px;
+  display: grid;
+  grid-template-columns: repeat(14, 1fr);
+  grid-template-rows: 20px 61px 32px;
+  grid-template-areas: ". . h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1"
+  ". . h2 h2 h2 h2 h2 h2 h2 h2 h2 h2 h2 h2"
+  ". . h3 h3 h3 h3 h3 h3 h3 h3 h3 h3 h3 h3"
+  ". . d d d d d d d d d d d d";
   width: 312px;
   height: 472px;
-  background-color: $color-grey-item;
+  background-color: #f2f2f2;
   border-radius: 0 12px 12px 12px;
-  clip-path: polygon(15% 0, 100% 0, 100% 100%, 0 100%, 0 10%);
+  clip-path: polygon(15% 0,100% 0,100% 100%,0 100%,0 10%);
   background-image: url(../images/cat.png);
   background-position: -27px 212px;
   background-size: 118%;
@@ -89,6 +96,7 @@
   font-size: 16px;
   font-family: $font-trebuchet;
   color: $color-grey;
+  grid-area: h1;
 }
 
 .funbox__heading1_active {
@@ -107,6 +115,7 @@
   font-family: $font-trebuchet;
   font-weight: 600;
   color: $color-black;
+  grid-area: h2;
 }
 
 .funbox__heading2_disabled {
@@ -121,6 +130,7 @@
   font-family: $font-trebuchet;
   font-weight: 600;
   color: $color-black;
+  grid-area: h3;
 }
 
 .funbox__heading3_disabled {
@@ -135,6 +145,7 @@
   font-size: 14px;
   font-family: $font-trebuchet;
   color: $color-grey;
+  grid-area: d;
 }
 
 .funbox__description_disabled {
